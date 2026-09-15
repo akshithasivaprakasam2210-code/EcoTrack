@@ -61,6 +61,10 @@ Main table: eco_reports
 - MySQL database verification
 - Validation testing
 - Exception testing
+## 📄 Project Report
+
+[📑 View EcoTrack Project Report](docs/EcoTrack_Project_Report.pdf)
+  
 
 ## Author
 AKSHITHA S S
