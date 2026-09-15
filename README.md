@@ -63,7 +63,7 @@ Main table: eco_reports
 - Exception testing
 ## 📄 Project Report
 
-[📑 View EcoTrack Project Report](docs/EcoTrack_Project_Report.pdf)
+[📑 View EcoTrack Project Report]EcoTrack_Project_Report.pdf
   
 
 ## Author
