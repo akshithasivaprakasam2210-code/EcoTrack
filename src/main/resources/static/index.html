@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoTrack - Campus Sustainability</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div>
+        <h1>🌱 EcoTrack</h1>
+        <p>Campus Sustainability Issue Management System</p>
+    </div>
+</header>
+
+<main>
+
+    <section class="dashboard">
+
+        <div class="card">
+            <h3>Total Reports</h3>
+            <p id="totalReports">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Pending</h3>
+            <p id="pendingReports">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Resolved</h3>
+            <p id="resolvedReports">0</p>
+        </div>
+
+        <div class="card">
+            <h3>High Priority</h3>
+            <p id="highReports">0</p>
+        </div>
+
+    </section>
+
+
+    <section class="form-section">
+
+        <h2 id="formTitle">Report a Sustainability Issue</h2>
+
+        <form id="reportForm">
+
+            <input type="hidden" id="reportId">
+
+            <div class="form-grid">
+
+                <div>
+                    <label>Reporter Name</label>
+
+                    <input
+                            type="text"
+                            id="reporterName"
+                            placeholder="Enter your name"
+                            required>
+                </div>
+
+
+                <div>
+                    <label>Location</label>
+
+                    <input
+                            type="text"
+                            id="location"
+                            placeholder="Example: Block A"
+                            required>
+                </div>
+
+
+                <div>
+                    <label>Category</label>
+
+                    <select id="category" required>
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="Electricity">
+                            Electricity
+                        </option>
+
+                        <option value="Water">
+                            Water
+                        </option>
+
+                        <option value="Waste">
+                            Waste
+                        </option>
+
+                        <option value="Environment">
+                            Environment
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <div>
+                    <label>Priority</label>
+
+                    <select id="priority" required>
+
+                        <option value="">
+                            Select Priority
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Medium">
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <div>
+                    <label>Status</label>
+
+                    <select id="status">
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="In Progress">
+                            In Progress
+                        </option>
+
+                        <option value="Resolved">
+                            Resolved
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <div class="full-width">
+
+                    <label>Description</label>
+
+                    <textarea
+                            id="description"
+                            placeholder="Describe the issue..."
+                            required>
+                    </textarea>
+
+                </div>
+
+            </div>
+
+
+            <button type="submit" id="submitButton">
+                Submit Report
+            </button>
+
+
+            <button
+                    type="button"
+                    id="cancelButton"
+                    class="cancel"
+                    onclick="cancelEdit()"
+                    style="display:none;">
+
+                Cancel
+
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <section class="controls">
+
+        <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search by location..."
+                oninput="searchReports()">
+
+
+        <select
+                id="filterCategory"
+                onchange="filterReports()">
+
+            <option value="">
+                All Categories
+            </option>
+
+            <option value="Electricity">
+                Electricity
+            </option>
+
+            <option value="Water">
+                Water
+            </option>
+
+            <option value="Waste">
+                Waste
+            </option>
+
+            <option value="Environment">
+                Environment
+            </option>
+
+            <option value="Other">
+                Other
+            </option>
+
+        </select>
+
+
+        <select
+                id="filterStatus"
+                onchange="filterReports()">
+
+            <option value="">
+                All Status
+            </option>
+
+            <option value="Pending">
+                Pending
+            </option>
+
+            <option value="In Progress">
+                In Progress
+            </option>
+
+            <option value="Resolved">
+                Resolved
+            </option>
+
+        </select>
+
+
+        <button onclick="loadReports()">
+            Reset
+        </button>
+
+    </section>
+
+
+    <section class="table-section">
+
+        <h2>Campus Reports</h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Reporter</th>
+                    <th>Location</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+
+                </thead>
+
+                <tbody id="reportTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        EcoTrack © 2026 | Campus Sustainability Management
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
